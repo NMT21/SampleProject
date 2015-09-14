@@ -90,6 +90,20 @@
 
 
         </RelativeLayout>
+        <View
+            android:id="@+id/login_progresswheel_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#99d3d3d3"
+            android:visibility="invisible"/>
+        <com.pnikosis.materialishprogress.ProgressWheel
+            android:id="@+id/progress_wheel"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            app:barColor="@color/colorPrimary"
+            app:progressIndeterminate="true"
+            android:visibility="invisible"/>
 
 
     </FrameLayout>
