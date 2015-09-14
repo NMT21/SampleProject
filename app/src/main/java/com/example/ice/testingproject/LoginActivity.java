@@ -11,17 +11,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
+import com.example.ice.testingproject.api.APIConfig;
 import com.example.ice.testingproject.utility.Config;
+import com.pnikosis.materialishprogress.ProgressWheel;
 
 /**
  * Created by ICE on 09/11/2015.
  */
-public class LoginActivity extends ActionBarActivity  implements View.OnClickListener{
+public class LoginActivity extends AppCompatActivity  implements View.OnClickListener{
 
     TextView register, usernametitle, passwordtitle;
     Button login;
     EditText username, password;
-
+    ProgressWheel progress;
     View progressbackground;
 
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
@@ -45,6 +48,9 @@ public class LoginActivity extends ActionBarActivity  implements View.OnClickLis
 
         usernametitle = (TextView) findViewById(R.id.login_email_label);
         passwordtitle = (TextView) findViewById(R.id.login_password_label);
+
+        progressbackground = findViewById(R.id.login_progresswheel_background);
+        progress = (ProgressWheel) findViewById(R.id.progress_wheel);
 
 
         login.setOnClickListener(this);
@@ -105,5 +111,10 @@ public class LoginActivity extends ActionBarActivity  implements View.OnClickLis
 
         ((EditText)materialdialog.findViewById(R.id.customdialog_changeroute)).setText(sPref.getString(Config.SERVER_ROUTE, APIConfig.BASE_URL));
         materialdialog.show();
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 }
